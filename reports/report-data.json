@@ -1,0 +1,6 @@
+{
+  "testName": "PDF Content Comparison",
+  "pdf1Length": 2848,
+  "pdf2Length": 2848,
+  "result": "PASSED"
+}

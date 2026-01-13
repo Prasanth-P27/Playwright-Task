@@ -1,0 +1,27 @@
+# Playwright PDF Comparison Test
+
+This project uses Playwright to compare the text content of two PDF files and generates an HTML report.
+
+## Prerequisites
+
+- Node.js installed
+- PDFs placed in the `pdfs/` directory as `file1.pdf` and `file2.pdf`
+
+## Running the Test
+
+1. Install dependencies:
+   ```sh
+   npm install
+
+Run the PDF comparison test:
+  
+
+   npx playwright test tests/comparePdf.spec.js
+
+This will compare the text content of pdfs/file1.pdf and pdfs/file2.pdf and log results to the console.
+
+Generating the Report
+After running the test, generate the HTML report from the existing report-data.json:
+
+
+    node reports/generate-report.js
