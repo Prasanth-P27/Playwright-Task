@@ -27,8 +27,7 @@ async function readPdfText(filePath) {
 
 test('Compare two PDFs content', async () => {
   const pdf1Path = './pdfs/file1.pdf';
-  const pdf2Path = './pdfs/file2.pdf';
-
+  const pdf2Path = './pdfs/file2.pdf';n
   const pdf1Text = await readPdfText(pdf1Path);
   const pdf2Text = await readPdfText(pdf2Path);
 
@@ -38,4 +37,17 @@ test('Compare two PDFs content', async () => {
   console.log('PDF 2 Length:', pdf2Text.length);
 
   expect(pdf1Text).toBe(pdf2Text);
+});
+
+// new test case to verify specific text appears in a PDF
+
+test('PDF should contain expected text string', async () => {
+  const pdfPath = './pdfs/file1.pdf';
+  const expectedPhrase = 'Important Notice';
+
+  const pdfText = await readPdfText(pdfPath);
+  console.log('Extracted PDF Text Length:', pdfText.length);
+
+  // ensure the expected phrase is present in the PDF
+  expect(pdfText).toContain(expectedPhrase);
 });
